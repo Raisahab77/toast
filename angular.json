@@ -102,6 +102,37 @@
           }
         }
       }
+    },
+    "toast-service": {
+      "projectType": "library",
+      "root": "projects/toast-service",
+      "sourceRoot": "projects/toast-service/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/toast-service/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/toast-service/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/toast-service/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/toast-service/src/test.ts",
+            "tsConfig": "projects/toast-service/tsconfig.spec.json",
+            "karmaConfig": "projects/toast-service/karma.conf.js"
+          }
+        }
+      }
     }
   }
 }
